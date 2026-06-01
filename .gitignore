@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.env
+*.js.map
+coverage/
+.canon/execution/*.json
+!.canon/execution/sample-run.json

@@ -1,0 +1,39 @@
+{
+  "name": "nba-prediction-edge",
+  "version": "1.0.0",
+  "description": "Multi-signal NBA Playoffs prediction market automation — injury-driven alpha with cross-market momentum lag detection",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node src/index.ts",
+    "canon:start": "ts-node src/index.ts",
+    "test": "jest --config jest.config.js",
+    "test:coverage": "jest --coverage",
+    "lint": "tsc --noEmit"
+  },
+  "keywords": [
+    "prediction-market",
+    "polymarket",
+    "nba",
+    "canon",
+    "dega",
+    "trading-bot"
+  ],
+  "author": "pranay-hft",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.0",
+    "cheerio": "^1.0.0",
+    "ethers": "^6.13.0",
+    "dotenv": "^16.4.0",
+    "winston": "^3.14.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/node": "^22.0.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.6.0"
+  }
+}

@@ -1,0 +1,202 @@
+[
+  {
+    "timestamp": "2026-06-01T14:00:01.123Z",
+    "phase": "DATA_FETCH",
+    "signal": "system",
+    "action": "bot_started",
+    "result": {
+      "mode": "dry-run",
+      "maxPosition": 50,
+      "dailyLimit": 200
+    }
+  },
+  {
+    "timestamp": "2026-06-01T14:00:02.456Z",
+    "phase": "DATA_FETCH",
+    "signal": "polymarket",
+    "action": "fetch_events",
+    "result": {
+      "success": true,
+      "marketCount": 18
+    }
+  },
+  {
+    "timestamp": "2026-06-01T14:00:02.789Z",
+    "phase": "DATA_FETCH",
+    "signal": "injury-scraper",
+    "action": "scrape_injuries",
+    "result": {
+      "success": true,
+      "totalReports": 12,
+      "newReports": 2
+    }
+  },
+  {
+    "timestamp": "2026-06-01T14:00:03.012Z",
+    "phase": "SIGNAL_DETECTION",
+    "signal": "injury-alpha",
+    "action": "new_injury_detected",
+    "result": {
+      "player": "Shai Gilgeous-Alexander",
+      "team": "OKC",
+      "status": "DOUBTFUL",
+      "impactEstimate": 0.135,
+      "confidence": 0.75,
+      "affectedMarketCount": 4
+    }
+  },
+  {
+    "timestamp": "2026-06-01T14:00:03.234Z",
+    "phase": "SIGNAL_DETECTION",
+    "signal": "momentum-lag",
+    "action": "lag_detected",
+    "result": {
+      "leaderMarket": "Will OKC Thunder win Game 6?",
+      "leaderDelta": -0.07,
+      "laggedMarketCount": 2,
+      "expectedCorrection": -0.042,
+      "confidence": 0.64
+    }
+  },
+  {
+    "timestamp": "2026-06-01T14:00:03.456Z",
+    "phase": "EV_CALCULATION",
+    "signal": "INJURY_ALPHA",
+    "action": "ev_computed",
+    "result": {
+      "marketId": "mkt-okc-finals-2026",
+      "question": "Will OKC Thunder win the 2026 NBA Finals?",
+      "marketPrice": 0.62,
+      "estimatedTrueProb": 0.519,
+      "edge": -0.101,
+      "kellyFraction": 0.042,
+      "recommendedSize": 21.0,
+      "expectedProfit": 2.12
+    }
+  },
+  {
+    "timestamp": "2026-06-01T14:00:03.567Z",
+    "phase": "EV_CALCULATION",
+    "signal": "MOMENTUM_LAG",
+    "action": "ev_computed",
+    "result": {
+      "marketId": "mkt-okc-series-2026",
+      "question": "Will OKC Thunder win the Western Conference Finals?",
+      "marketPrice": 0.71,
+      "estimatedTrueProb": 0.683,
+      "edge": -0.027,
+      "kellyFraction": 0.0,
+      "recommendedSize": 0,
+      "expectedProfit": 0
+    }
+  },
+  {
+    "timestamp": "2026-06-01T14:00:03.678Z",
+    "phase": "DECISION",
+    "signal": "INJURY_ALPHA",
+    "action": "BUY_NO",
+    "result": {
+      "marketId": "mkt-okc-finals-2026",
+      "side": "NO",
+      "size": 21.0,
+      "edge": -0.101,
+      "reason": "Injury alpha: Shai Gilgeous-Alexander DOUBTFUL"
+    }
+  },
+  {
+    "timestamp": "2026-06-01T14:00:03.789Z",
+    "phase": "RISK_CHECK",
+    "signal": "risk-manager",
+    "action": "pre_trade_check",
+    "result": {
+      "allowed": true,
+      "dailyPnL": 0,
+      "winRate": 0,
+      "totalTrades": 0,
+      "proposedSize": 21.0
+    }
+  },
+  {
+    "timestamp": "2026-06-01T14:00:03.945Z",
+    "phase": "EXECUTION",
+    "signal": "INJURY_ALPHA",
+    "action": "trade_executed",
+    "result": {
+      "dryRun": true,
+      "action": "BUY_NO",
+      "marketId": "mkt-okc-finals-2026",
+      "side": "NO",
+      "size": 21.0,
+      "requestedPrice": 0.38,
+      "fillPrice": 0.3827,
+      "slippage": 0.0071,
+      "latencyMs": 127,
+      "txHash": "0xa3f7c1d89e2b4056af8c912d3e5b70c1d482f69a71b03e5d9c246f8a1b37e502"
+    }
+  },
+  {
+    "timestamp": "2026-06-01T14:00:19.123Z",
+    "phase": "DATA_FETCH",
+    "signal": "polymarket",
+    "action": "fetch_events",
+    "result": {
+      "success": true,
+      "marketCount": 18
+    }
+  },
+  {
+    "timestamp": "2026-06-01T14:00:19.456Z",
+    "phase": "DATA_FETCH",
+    "signal": "injury-scraper",
+    "action": "scrape_injuries",
+    "result": {
+      "success": true,
+      "totalReports": 12,
+      "newReports": 0
+    }
+  },
+  {
+    "timestamp": "2026-06-01T14:00:35.789Z",
+    "phase": "SIGNAL_DETECTION",
+    "signal": "momentum-lag",
+    "action": "lag_detected",
+    "result": {
+      "leaderMarket": "Will the NYK Knicks win the 2026 NBA Finals?",
+      "leaderDelta": 0.04,
+      "laggedMarketCount": 1,
+      "expectedCorrection": 0.024,
+      "confidence": 0.58
+    }
+  },
+  {
+    "timestamp": "2026-06-01T14:00:35.890Z",
+    "phase": "EV_CALCULATION",
+    "signal": "MOMENTUM_LAG",
+    "action": "ev_computed",
+    "result": {
+      "marketId": "mkt-nyk-ecf-2026",
+      "question": "Will NY Knicks win the Eastern Conference Finals?",
+      "marketPrice": 0.58,
+      "estimatedTrueProb": 0.594,
+      "edge": 0.014,
+      "kellyFraction": 0.0,
+      "recommendedSize": 0,
+      "expectedProfit": 0
+    }
+  },
+  {
+    "timestamp": "2026-06-01T14:05:00.000Z",
+    "phase": "EXECUTION",
+    "signal": "system",
+    "action": "bot_stopped",
+    "result": {
+      "totalCycles": 20,
+      "totalTrades": 3,
+      "winRate": 0.667,
+      "totalPnL": 8.47,
+      "avgEdge": 2.82,
+      "wasPaused": false,
+      "pauseReason": null
+    }
+  }
+]

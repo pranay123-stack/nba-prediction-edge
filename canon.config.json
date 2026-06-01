@@ -1,0 +1,22 @@
+{
+  "name": "nba-prediction-edge",
+  "version": "1.0.0",
+  "strategy": "hybrid-multi-signal",
+  "market": "polymarket",
+  "chain": "polygon",
+  "entrypoint": "src/index.ts",
+  "execution": {
+    "mode": "dry-run",
+    "logDir": ".canon/execution"
+  },
+  "signals": [
+    "injury-alpha",
+    "momentum-lag",
+    "cross-market-divergence"
+  ],
+  "riskLimits": {
+    "maxPositionUSD": 50,
+    "dailyLossLimitUSD": 200,
+    "stopLossThreshold": 0.15
+  }
+}
